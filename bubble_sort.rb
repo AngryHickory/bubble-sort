@@ -1,15 +1,18 @@
 def bubble_sort(array)
   swapped_in_pass = true     
+  end_of_unsorted_portion = array.length-1
 
   while swapped_in_pass == true
-    swapped_in_pass = false 
-
-    (0...array.length-1).each do |i|
+    swapped_in_pass = false
+     
+    (0...end_of_unsorted_portion).each do |i|
       if array[i] > array[i+1]
         array[i], array[i+1] = array[i+1], array[i]
         swapped_in_pass = true
       end
     end
+
+    end_of_unsorted_portion -= 1
   end
 
   array
